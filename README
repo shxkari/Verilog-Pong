@@ -1,0 +1,78 @@
+Pong Project Proposal for EE354 Lab Spring 2018
+
+Title:
+
+Project name:
+
+The Game of Pong Implemented on Nexys 3 FPGA Board
+
+Members:
+
+Thomas Weaver		tjweaver@usc.edu
+Taylor Stroobosscher		strooboss@usc.edu
+Sufyan Shaikh			sufyansh@usc.edu
+
+Teaching Assistant/Project Manager:
+Pezhman Mamdouh		mamdouh@usc.edu
+
+Abstract:
+
+Pong is one of the first video games ever made. Atari were the original
+creators of the game and it is meant to be a two dimensional version of the
+game table tennis. The game consists of two vertically oriented bars that 
+are on the edges of the screen and there is a dot that is viewed as the 
+ball. The ball is set in a random direction and the player who last won the
+point will have the chance to hit the ball first indicating their serve. 
+Points are gained by getting the ball past the opponent’s vertical bar and
+the game is played to a number of points. The implementation of this game 
+will require direct application of the material learned thus far in EE354 
+and will be a sufficient challenge to show mastery of the material. This 
+will also be a fun project to demonstrate as it will pay homage to one of
+the most important games in video game history.
+
+Description:
+
+The game will be implemented on the Xilinx Spartan6 FPGA and will output
+the game using the VGA port on the Nexys 3 board to a video monitor. The
+buttons on the board will be used as inputs for up and down for the
+vertical bars which resemble each player. Two counters will be needed to  
+keep track of the Scores of each player and the switches/push buttons could
+be used to organize the initial setup of the game as in who is player one 
+or two, difficulty setting coordinating to how fast the ball will move
+across the screen, or how long each players bar could be. These are all
+settings to how hard/easy the game wants to be played by the players. All 
+game design software will be implemented 
+
+
+
+	state machine module
+			 ___________
+			|process 	|
+player pos	|button 	| Game state
+	------->|presses	|----->
+			|			|
+			|___________|
+
+
+
+	button processing module
+
+			 ___________
+Button info	|process 	|
+			|button 	| player pos
+	------->|presses	|----->
+			|			|
+			|___________|
+
+
+
+	screencontrol module	
+
+Ball pos
+Game state	 ___________
+player pos	|Draw Player|
+			|Draw Ball	| VGA
+	------->|			|----->
+			|			|
+			|___________|
+
